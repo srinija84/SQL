@@ -1,15 +1,15 @@
  IF EXISTS(SELECT DISTINCT pt.PersonTaskId
  from cms.PersonTasks pt 
- where pt.url = 'Document/DocumentPosting?selectedDocumentId=11278,11277,11276,11211,11165,11164,11163,11162,11161,11160,11159&&protocolName=17-0010&&CAdmin=Approved') 
+ where pt.url = 'URL') 
 
 				  BEGIN 
       BEGIN TRAN t1; 
 
       delete from  cms.persontasks               
-      WHERE  cms.persontasks.url = 'Document/DocumentPosting?selectedDocumentId=11278,11277,11276,11211,11165,11164,11163,11162,11161,11160,11159&&protocolName=17-0010&&CAdmin=Approved'
+      WHERE  cms.persontasks.url = 'URL'
 
       delete from cms.tasks
-	  where cms.tasks.uniqueid = '1EA4BC98-6868-431E-BB26-F5A8B36F8AC8' and cms.tasks.taskid = 288
+	  where cms.tasks.uniqueid = 'abc' and cms.tasks.taskid = 123
 
 	IF ( @@ERROR > 0 ) 
         BEGIN 
